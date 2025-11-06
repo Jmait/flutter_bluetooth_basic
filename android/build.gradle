@@ -23,7 +23,7 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 34
     namespace ="com.tablemi.flutter_bluetooth_basic"
     defaultConfig {
         minSdkVersion 21
