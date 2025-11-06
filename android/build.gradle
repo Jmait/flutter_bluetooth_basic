@@ -4,19 +4,17 @@ version '1.0'
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
-
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath 'com.android.tools.build:gradle:7.3.0'
     }
 }
-
 
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
@@ -24,13 +22,22 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 34
-    namespace ="com.tablemi.flutter_bluetooth_basic"
+    namespace = "com.tablemi.flutter_bluetooth_basic"
+    
     defaultConfig {
         minSdkVersion 21
+        targetSdkVersion 34
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    
     lintOptions {
         disable 'InvalidPackage'
+        checkReleaseBuilds false
     }
 }
 
